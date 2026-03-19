@@ -106,8 +106,8 @@ direktedemokrati.nu/
 - [x] 0.2 Configure `tailwind.config.ts` with custom color palette, fonts, shadows from design mockups
 - [x] 0.3 Load Nunito and Space Grotesk via `next/font/google` in root layout
 - [x] 0.4 Set up ESLint + Prettier with project conventions
-- [ ] 0.5 Configure path aliases (`@/components`, `@/lib`, `@/hooks`, `@/types`)
-- [ ] 0.6 Create TypeScript interfaces in `src/types/index.ts` mirroring the SPEC.md data model (Proposal, UserVote, MP, Constituency, ParliamentaryVoteResult, MPVote, MediaCitation, AISummary, UserSession)
+- [x] 0.5 Configure path aliases (`@/components`, `@/lib`, `@/hooks`, `@/types`)
+- [x] 0.6 Create TypeScript interfaces in `src/types/index.ts` mirroring the SPEC.md data model (Proposal, UserVote, MP, Constituency, ParliamentaryVoteResult, MPVote, MediaCitation, AISummary, UserSession)
 - [ ] 0.7 Create `src/lib/constants.ts` with color tokens and config values
 - [ ] 0.8 Create `src/lib/utils.ts` with helper functions (formatCountdown, formatPercentage, etc.)
 - [ ] 0.9 Create `src/lib/mock-data.ts` with realistic Danish mock data (5–8 proposals, 20+ MPs, constituencies, media citations, vote results)

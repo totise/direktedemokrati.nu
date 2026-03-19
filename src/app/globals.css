@@ -12,5 +12,5 @@ body {
   min-height: 100vh;
   background: #fffaf5;
   color: #2c2c2c;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-nunito), sans-serif;
 }

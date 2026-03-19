@@ -11,12 +11,13 @@ export interface ScreenProps {
  * - filterActive: An outcome filter (e.g., "Passed") is applied, narrowing down the list.
  */
 const ArchiveScreen: React.FC<ScreenProps> = ({ state }) => {
-
   const renderHeader = () => {
     return (
       <header className="bg-[#FFFAF5] px-5 pt-6 pb-2 sticky top-0 z-30">
-        <h1 className="font-['Nunito'] font-bold text-2xl text-[#2C2C2C] mb-4">Archive</h1>
-        
+        <h1 className="font-['Nunito'] font-bold text-2xl text-[#2C2C2C] mb-4">
+          Archive
+        </h1>
+
         {/* Tab Switcher */}
         <div className="flex bg-[#F3F4F6] p-1 rounded-xl mb-2">
           <button className="flex-1 py-2.5 rounded-lg text-sm font-bold text-[#6B7280] hover:text-[#2C2C2C] transition-colors">
@@ -29,10 +30,14 @@ const ArchiveScreen: React.FC<ScreenProps> = ({ state }) => {
 
         {/* Filters */}
         <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar mt-2">
-          <button className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-bold border-2 transition-all ${state === 'default' ? 'bg-[#22A06B] border-[#22A06B] text-white' : 'bg-transparent border-[#E5E7EB] text-[#2C2C2C]'}`}>
+          <button
+            className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-bold border-2 transition-all ${state === "default" ? "bg-[#22A06B] border-[#22A06B] text-white" : "bg-transparent border-[#E5E7EB] text-[#2C2C2C]"}`}
+          >
             All Outcomes
           </button>
-          <button className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-bold border-2 transition-all ${state === 'filterActive' ? 'bg-[#22A06B] border-[#22A06B] text-white' : 'bg-transparent border-[#E5E7EB] text-[#2C2C2C]'}`}>
+          <button
+            className={`whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-bold border-2 transition-all ${state === "filterActive" ? "bg-[#22A06B] border-[#22A06B] text-white" : "bg-transparent border-[#E5E7EB] text-[#2C2C2C]"}`}
+          >
             Passed
           </button>
           <button className="whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-bold border-2 transition-all bg-transparent border-[#E5E7EB] text-[#2C2C2C]">
@@ -43,31 +48,44 @@ const ArchiveScreen: React.FC<ScreenProps> = ({ state }) => {
     );
   };
 
-  const renderArchiveItem = (title: string, date: string, result: 'passed' | 'rejected', alignment: 'aligned' | 'split') => {
+  const renderArchiveItem = (
+    title: string,
+    date: string,
+    result: "passed" | "rejected",
+    alignment: "aligned" | "split"
+  ) => {
     return (
       <div className="bg-[#FFFFFF] rounded-2xl p-4 mb-3 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-['Nunito'] font-bold text-base text-[#2C2C2C] leading-snug w-3/4">
             {title}
           </h3>
-          <div className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide ${result === 'passed' ? 'bg-[#22A06B]/10 text-[#22A06B]' : 'bg-[#E34935]/10 text-[#E34935]'}`}>
+          <div
+            className={`px-2 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wide ${result === "passed" ? "bg-[#22A06B]/10 text-[#22A06B]" : "bg-[#E34935]/10 text-[#E34935]"}`}
+          >
             {result}
           </div>
         </div>
-        
+
         <div className="flex items-center justify-between mt-3 pt-3 border-t border-[#F3F4F6]">
-          <span className="text-xs text-[#6B7280] font-['Space_Grotesk']">{date}</span>
-          
+          <span className="text-xs text-[#6B7280] font-['Space_Grotesk']">
+            {date}
+          </span>
+
           <div className="flex items-center gap-1.5">
-            {alignment === 'aligned' ? (
+            {alignment === "aligned" ? (
               <>
                 <Icons.CheckCircle className="w-4 h-4 text-[#22A06B]" />
-                <span className="text-xs font-bold text-[#22A06B]">Public Aligned</span>
+                <span className="text-xs font-bold text-[#22A06B]">
+                  Public Aligned
+                </span>
               </>
             ) : (
               <>
                 <Icons.AlertCircle className="w-4 h-4 text-[#F59E0B]" />
-                <span className="text-xs font-bold text-[#F59E0B]">Split Decision</span>
+                <span className="text-xs font-bold text-[#F59E0B]">
+                  Split Decision
+                </span>
               </>
             )}
           </div>
@@ -107,19 +125,45 @@ const ArchiveScreen: React.FC<ScreenProps> = ({ state }) => {
   return (
     <div className="font-['Nunito'] bg-[#FFFAF5] min-h-screen pb-24">
       {renderHeader()}
-      
+
       <main className="px-5 pt-4">
         {renderSectionHeader("2023-2024 Session")}
         <div className="mt-2">
-          {renderArchiveItem("Climate Action Act", "Oct 15, 2023", "passed", "aligned")}
-          {state === 'default' && renderArchiveItem("Digital Tax Reform", "Oct 10, 2023", "rejected", "split")}
-          {renderArchiveItem("Infrastructure Bill", "Sep 28, 2023", "passed", "aligned")}
+          {renderArchiveItem(
+            "Climate Action Act",
+            "Oct 15, 2023",
+            "passed",
+            "aligned"
+          )}
+          {state === "default" &&
+            renderArchiveItem(
+              "Digital Tax Reform",
+              "Oct 10, 2023",
+              "rejected",
+              "split"
+            )}
+          {renderArchiveItem(
+            "Infrastructure Bill",
+            "Sep 28, 2023",
+            "passed",
+            "aligned"
+          )}
         </div>
 
         {renderSectionHeader("2022-2023 Session")}
         <div className="mt-2">
-          {renderArchiveItem("Defense Spending Increase", "Jun 01, 2023", "passed", "split")}
-          {renderArchiveItem("Education Funding Law", "May 20, 2023", "passed", "aligned")}
+          {renderArchiveItem(
+            "Defense Spending Increase",
+            "Jun 01, 2023",
+            "passed",
+            "split"
+          )}
+          {renderArchiveItem(
+            "Education Funding Law",
+            "May 20, 2023",
+            "passed",
+            "aligned"
+          )}
         </div>
       </main>
 

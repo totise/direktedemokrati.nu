@@ -29,6 +29,7 @@ Interview the user before writing any code. Cover:
 
 Use question tools if available. After gathering requirements, create
 `IMPLEMENTATION_PLAN.md` containing:
+
 - User context and agreed stack
 - Detailed implementation tasks organized by user journey (from `SPEC.md`)
 - Checkboxes for each task to track progress
@@ -76,6 +77,7 @@ npx vitest run -t "pattern"
 ```
 
 If the project uses Jest instead of Vitest:
+
 ```bash
 npx jest src/path/to/file.test.ts
 npx jest --testNamePattern="pattern"
@@ -138,19 +140,19 @@ confirm zero type errors and a clean build.
   e.g. dynamic widths from data: `style={{ width: \`${forPct}%\` }}`.
 - Replicate the design mockup color palette exactly:
 
-  | Token              | Value       | Usage                        |
-  |--------------------|-------------|------------------------------|
-  | Primary purple     | `#5B4FCF`   | Buttons, active states, icons |
-  | Primary dark       | `#3D329F`   | Hover on primary             |
-  | Background warm    | `#FFFAF5`   | Page/app background          |
-  | Surface white      | `#FFFFFF`   | Cards                        |
-  | Text dark          | `#2C2C2C`   | Headings, body text          |
-  | Text muted         | `#6B7280`   | Secondary text, labels       |
-  | Border / surface   | `#E5E7EB`   | Dividers, inactive tabs      |
-  | Surface subtle     | `#F3F4F6`   | Hover backgrounds            |
-  | Vote For (green)   | `#22A06B`   | "For" vote indicator         |
-  | Vote Against (red) | `#E34935`   | "Against" vote indicator     |
-  | Urgent / accent    | `#FF6B35`   | Countdown, notifications     |
+  | Token              | Value     | Usage                         |
+  | ------------------ | --------- | ----------------------------- |
+  | Primary purple     | `#5B4FCF` | Buttons, active states, icons |
+  | Primary dark       | `#3D329F` | Hover on primary              |
+  | Background warm    | `#FFFAF5` | Page/app background           |
+  | Surface white      | `#FFFFFF` | Cards                         |
+  | Text dark          | `#2C2C2C` | Headings, body text           |
+  | Text muted         | `#6B7280` | Secondary text, labels        |
+  | Border / surface   | `#E5E7EB` | Dividers, inactive tabs       |
+  | Surface subtle     | `#F3F4F6` | Hover backgrounds             |
+  | Vote For (green)   | `#22A06B` | "For" vote indicator          |
+  | Vote Against (red) | `#E34935` | "Against" vote indicator      |
+  | Urgent / accent    | `#FF6B35` | Countdown, notifications      |
 
 - Card shadow: `shadow-[0_4px_16px_rgba(0,0,0,0.04)]`
 - Card border radius: `rounded-2xl`

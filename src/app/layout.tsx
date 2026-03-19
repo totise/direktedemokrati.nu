@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactElement, ReactNode } from "react";
 import { Nunito, Space_Grotesk } from "next/font/google";
 
 import "./globals.css";
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode;
-}>): React.ReactElement {
+  children: ReactNode;
+}>): ReactElement {
   return (
     <html lang="da" className={`${nunito.variable} ${spaceGrotesk.variable}`}>
       <body>{children}</body>

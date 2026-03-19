@@ -8,20 +8,20 @@
 
 ## Agreed Stack
 
-| Layer          | Choice                                  |
-|----------------|-----------------------------------------|
-| Framework      | Next.js 14+ (App Router)                |
-| Language       | TypeScript (strict)                     |
-| Styling        | Tailwind CSS 3                          |
-| Fonts          | Nunito + Space Grotesk via `next/font`  |
-| Icons          | lucide-react                            |
-| State (local)  | React state + localStorage              |
-| Backend / DB   | Supabase (deferred — mock data first)   |
-| Auth           | Anonymous sessions (localStorage ID)    |
-| Hosting        | Vercel                                  |
-| PWA            | next-pwa (service worker, manifest)     |
-| Linting        | ESLint (Next.js defaults) + Prettier    |
-| Testing        | Vitest + React Testing Library          |
+| Layer         | Choice                                 |
+| ------------- | -------------------------------------- |
+| Framework     | Next.js 14+ (App Router)               |
+| Language      | TypeScript (strict)                    |
+| Styling       | Tailwind CSS 3                         |
+| Fonts         | Nunito + Space Grotesk via `next/font` |
+| Icons         | lucide-react                           |
+| State (local) | React state + localStorage             |
+| Backend / DB  | Supabase (deferred — mock data first)  |
+| Auth          | Anonymous sessions (localStorage ID)   |
+| Hosting       | Vercel                                 |
+| PWA           | next-pwa (service worker, manifest)    |
+| Linting       | ESLint (Next.js defaults) + Prettier   |
+| Testing       | Vitest + React Testing Library         |
 
 ## Scope
 
@@ -105,7 +105,7 @@ direktedemokrati.nu/
 - [x] 0.1 Initialize Next.js project with TypeScript, Tailwind CSS, App Router
 - [x] 0.2 Configure `tailwind.config.ts` with custom color palette, fonts, shadows from design mockups
 - [x] 0.3 Load Nunito and Space Grotesk via `next/font/google` in root layout
-- [ ] 0.4 Set up ESLint + Prettier with project conventions
+- [x] 0.4 Set up ESLint + Prettier with project conventions
 - [ ] 0.5 Configure path aliases (`@/components`, `@/lib`, `@/hooks`, `@/types`)
 - [ ] 0.6 Create TypeScript interfaces in `src/types/index.ts` mirroring the SPEC.md data model (Proposal, UserVote, MP, Constituency, ParliamentaryVoteResult, MPVote, MediaCitation, AISummary, UserSession)
 - [ ] 0.7 Create `src/lib/constants.ts` with color tokens and config values

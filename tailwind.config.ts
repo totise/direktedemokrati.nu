@@ -6,7 +6,11 @@ const config: Config = {
     extend: {
       fontFamily: {
         nunito: ["var(--font-nunito)", "Nunito", "sans-serif"],
-        spaceGrotesk: ["var(--font-space-grotesk)", "Space Grotesk", "sans-serif"]
+        spaceGrotesk: [
+          "var(--font-space-grotesk)",
+          "Space Grotesk",
+          "sans-serif"
+        ]
       },
       colors: {
         primary: {

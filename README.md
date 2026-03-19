@@ -1,5 +1,5 @@
-# direkteedemokrati.dk - Mowgli AI Export (v13)
+# direktedemokrati.nu
 
-This folder contains everything you need to implement direkteedemokrati.dk.
+This repository contains the Mowgli export for `direktedemokrati.nu` / `direkteedemokrati.dk`.
 
-See AGENTS.md for instructions on how to proceed.
+See `AGENTS.md` for instructions on how to proceed.

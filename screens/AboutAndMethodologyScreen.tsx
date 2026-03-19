@@ -22,13 +22,13 @@ const AboutAndMethodologyScreen: React.FC<ScreenProps> = ({ state }) => {
     </header>
   );
 
-  const renderSectionCard = (icon: React.ReactNode, title: string, children: React.ReactNode, isFirst: boolean = false) => (
+  const renderSectionCard = (icon: React.ReactElement, title: string, children: React.ReactNode, isFirst: boolean = false) => (
     <div className={`bg-[#FFFFFF] rounded-2xl p-5 shadow-[0_4px_16px_rgba(0,0,0,0.04)] mb-4 ${isFirst ? 'bg-gradient-to-br from-[#5B4FCF] to-[#3D329F] text-white' : ''}`}>
       <div className="flex items-center gap-3 mb-3">
         <div className={`p-2 rounded-lg ${isFirst ? 'bg-white/20' : 'bg-[#F3F4F6]'}`}>
-           {React.cloneElement(icon as React.ReactElement, { 
-             className: `w-5 h-5 ${isFirst ? 'text-white' : 'text-[#5B4FCF]'}` 
-           })}
+            {React.cloneElement(icon as React.ReactElement<React.SVGProps<SVGSVGElement>>, {
+              className: `w-5 h-5 ${isFirst ? "text-white" : "text-[#5B4FCF]"}`
+            })}
         </div>
         <h2 className={`font-['Nunito'] font-bold text-lg ${isFirst ? 'text-white' : 'text-[#2C2C2C]'}`}>{title}</h2>
       </div>

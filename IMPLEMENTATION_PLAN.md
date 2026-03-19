@@ -102,9 +102,9 @@ direktedemokrati.nu/
 
 ### 0. Project Scaffolding
 
-- [ ] 0.1 Initialize Next.js project with TypeScript, Tailwind CSS, App Router
-- [ ] 0.2 Configure `tailwind.config.ts` with custom color palette, fonts, shadows from design mockups
-- [ ] 0.3 Load Nunito and Space Grotesk via `next/font/google` in root layout
+- [x] 0.1 Initialize Next.js project with TypeScript, Tailwind CSS, App Router
+- [x] 0.2 Configure `tailwind.config.ts` with custom color palette, fonts, shadows from design mockups
+- [x] 0.3 Load Nunito and Space Grotesk via `next/font/google` in root layout
 - [ ] 0.4 Set up ESLint + Prettier with project conventions
 - [ ] 0.5 Configure path aliases (`@/components`, `@/lib`, `@/hooks`, `@/types`)
 - [ ] 0.6 Create TypeScript interfaces in `src/types/index.ts` mirroring the SPEC.md data model (Proposal, UserVote, MP, Constituency, ParliamentaryVoteResult, MPVote, MediaCitation, AISummary, UserSession)

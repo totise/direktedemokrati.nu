@@ -4,6 +4,10 @@ const config: Config = {
   content: ["./src/**/*.{ts,tsx}", "./screens/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ["var(--font-nunito)", "Nunito", "sans-serif"],
+        spaceGrotesk: ["var(--font-space-grotesk)", "Space Grotesk", "sans-serif"]
+      },
       colors: {
         primary: {
           DEFAULT: "#5B4FCF",

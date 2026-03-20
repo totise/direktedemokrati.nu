@@ -2,31 +2,77 @@
 
 import { useEffect, useState } from "react";
 
-const SESSION_STORAGE_KEY = "direktedemokrati.sessionId";
+import type { UserSession } from "@/types";
 
-const createSessionId = (): string => {
-  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
-    return crypto.randomUUID();
-  }
+const SESSION_STORAGE_KEY = "direkte-demokrati.session";
 
-  return `session_${Math.random().toString(36).slice(2, 11)}`;
+const createSession = (): UserSession => {
+  const now = new Date().toISOString();
+  const id = globalThis.crypto?.randomUUID?.() ?? `session-${Math.random().toString(36).slice(2, 10)}`;
+
+  return {
+    id,
+    fingerprint: id,
+    createdAt: now,
+    lastActive: now,
+    constituencyId: null,
+    voteCount: 0
+  };
 };
 
-export function useSession(): string | null {
-  const [sessionId, setSessionId] = useState<string | null>(null);
+const readSession = (): UserSession | null => {
+  try {
+    const raw = window.localStorage.getItem(SESSION_STORAGE_KEY);
+
+    return raw ? (JSON.parse(raw) as UserSession) : null;
+  } catch {
+    return null;
+  }
+};
+
+const persistSession = (session: UserSession): void => {
+  window.localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(session));
+};
+
+export interface UseSessionResult {
+  session: UserSession | null;
+  isLoaded: boolean;
+  updateSession: (patch: Partial<UserSession>) => void;
+}
+
+export const useSession = (): UseSessionResult => {
+  const [session, setSession] = useState<UserSession | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const storedSessionId = window.localStorage.getItem(SESSION_STORAGE_KEY);
+    const existingSession = readSession();
+    const nextSession = existingSession ?? createSession();
 
-    if (storedSessionId) {
-      setSessionId(storedSessionId);
-      return;
-    }
-
-    const nextSessionId = createSessionId();
-    window.localStorage.setItem(SESSION_STORAGE_KEY, nextSessionId);
-    setSessionId(nextSessionId);
+    persistSession(nextSession);
+    setSession(nextSession);
+    setIsLoaded(true);
   }, []);
 
-  return sessionId;
-}
+  const updateSession = (patch: Partial<UserSession>): void => {
+    setSession((current) => {
+      if (!current) {
+        return current;
+      }
+
+      const nextSession: UserSession = {
+        ...current,
+        ...patch,
+        lastActive: new Date().toISOString()
+      };
+
+      persistSession(nextSession);
+      return nextSession;
+    });
+  };
+
+  return {
+    session,
+    isLoaded,
+    updateSession
+  };
+};

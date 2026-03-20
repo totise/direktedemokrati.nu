@@ -69,6 +69,8 @@ export const proposals: Proposal[] = [
     parliamentarySession: "2025-2026",
     proposalNumber: "L 14",
     isFeatured: true,
+    publicVoteCountFor: 64,
+    publicVoteCountAgainst: 36,
     curatorNotes: "High public interest; strong media coverage across energy and industry desks.",
     createdAt: "2026-03-14T08:30:00.000Z",
     updatedAt: "2026-03-18T14:15:00.000Z"
@@ -85,6 +87,8 @@ export const proposals: Proposal[] = [
     parliamentarySession: "2025-2026",
     proposalNumber: "L 22",
     isFeatured: false,
+    publicVoteCountFor: 58,
+    publicVoteCountAgainst: 42,
     curatorNotes: "Likely to split parties on privacy vs access arguments.",
     createdAt: "2026-03-11T07:20:00.000Z",
     updatedAt: "2026-03-17T09:45:00.000Z"
@@ -101,6 +105,8 @@ export const proposals: Proposal[] = [
     parliamentarySession: "2025-2026",
     proposalNumber: "B 81",
     isFeatured: false,
+    publicVoteCountFor: 71,
+    publicVoteCountAgainst: 29,
     curatorNotes: "Awaiting the formal parliamentary tally.",
     createdAt: "2026-02-28T10:00:00.000Z",
     updatedAt: "2026-03-10T12:30:00.000Z"
@@ -117,6 +123,8 @@ export const proposals: Proposal[] = [
     parliamentarySession: "2025-2026",
     proposalNumber: "L 3",
     isFeatured: false,
+    publicVoteCountFor: 49,
+    publicVoteCountAgainst: 51,
     curatorNotes: "Public result published; useful for results comparison screen.",
     createdAt: "2026-02-10T08:20:00.000Z",
     updatedAt: "2026-02-21T09:40:00.000Z"
@@ -133,6 +141,8 @@ export const proposals: Proposal[] = [
     parliamentarySession: "2024-2025",
     proposalNumber: "L 97",
     isFeatured: false,
+    publicVoteCountFor: 33,
+    publicVoteCountAgainst: 67,
     curatorNotes: "Archived historical example.",
     createdAt: "2025-11-01T09:00:00.000Z",
     updatedAt: "2025-12-01T11:00:00.000Z"
@@ -149,6 +159,8 @@ export const proposals: Proposal[] = [
     parliamentarySession: "2025-2026",
     proposalNumber: "L 31",
     isFeatured: false,
+    publicVoteCountFor: 52,
+    publicVoteCountAgainst: 48,
     curatorNotes: "Draft placeholder from the ODA import pipeline.",
     createdAt: "2026-03-17T06:50:00.000Z",
     updatedAt: "2026-03-18T16:25:00.000Z"

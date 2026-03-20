@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactElement, ReactNode } from "react";
 import { Nunito, Space_Grotesk } from "next/font/google";
 
@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   description: "Mobile-first civic participation web app"
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover"
+};
+
 export default function RootLayout({
   children
 }: Readonly<{
@@ -26,7 +32,9 @@ export default function RootLayout({
 }>): ReactElement {
   return (
     <html lang="da" className={`${nunito.variable} ${spaceGrotesk.variable}`}>
-      <body>{children}</body>
+      <body className="min-h-screen bg-[#FFFAF5] font-['Nunito'] text-[#2C2C2C] antialiased">
+        {children}
+      </body>
     </html>
   );
 }

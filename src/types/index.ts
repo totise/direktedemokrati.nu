@@ -26,6 +26,8 @@ export interface Proposal {
   parliamentarySession: string;
   proposalNumber: string;
   isFeatured: boolean;
+  publicVoteCountFor: number;
+  publicVoteCountAgainst: number;
   curatorNotes: string;
   createdAt: string;
   updatedAt: string;

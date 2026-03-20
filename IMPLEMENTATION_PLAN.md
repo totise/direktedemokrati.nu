@@ -135,22 +135,22 @@ direktedemokrati.nu/
 
 #### 1.3 Proposal Detail Screen
 
-- [ ] 1.3.1 Build `src/app/proposal/[id]/page.tsx` — ProposalDetailScreen with header, status badge, countdown
-- [ ] 1.3.2 Build expandable AI Summary section (collapsed teaser → full text)
-- [ ] 1.3.3 Build Media Perspectives section with citation cards (source name, stance indicator, quote excerpt)
-- [ ] 1.3.4 Build `src/components/media-citation-sheet.tsx` — bottom sheet with full quote, date, external link
-- [ ] 1.3.5 Build "Who Represents Me?" collapsible section with postcode entry
-- [ ] 1.3.6 Build `src/components/postcode-modal.tsx` — bottom sheet for 4-digit postcode input with validation
-- [ ] 1.3.7 Build voting controls — For/Against buttons with anonymous vote privacy notice
-- [ ] 1.3.8 Implement vote submission logic — store vote in localStorage via `use-votes` hook, show confirmation state
-- [ ] 1.3.9 Build post-vote confirmation state — user's choice, updated stats, "Save to My Votes", "Email Receipt" buttons
-- [ ] 1.3.10 Build `src/components/share-modal.tsx` — share to social / copy link
-- [ ] 1.3.11 Build data source attribution footer ("Data from oda.ft.dk", "Summaries AI-generated")
+- [x] 1.3.1 Build `src/app/proposal/[id]/page.tsx` — ProposalDetailScreen with header, status badge, countdown
+- [x] 1.3.2 Build expandable AI Summary section (collapsed teaser → full text)
+- [x] 1.3.3 Build Media Perspectives section with citation cards (source name, stance indicator, quote excerpt)
+- [x] 1.3.4 Build `src/components/media-citation-sheet.tsx` — bottom sheet with full quote, date, external link
+- [x] 1.3.5 Build "Who Represents Me?" collapsible section with postcode entry
+- [x] 1.3.6 Build `src/components/postcode-modal.tsx` — bottom sheet for 4-digit postcode input with validation
+- [x] 1.3.7 Build voting controls — For/Against buttons with anonymous vote privacy notice
+- [x] 1.3.8 Implement vote submission logic — store vote in localStorage via `use-votes` hook, show confirmation state
+- [x] 1.3.9 Build post-vote confirmation state — user's choice, updated stats, "Save to My Votes", "Email Receipt" buttons
+- [x] 1.3.10 Build `src/components/share-modal.tsx` — share to social / copy link
+- [x] 1.3.11 Build data source attribution footer ("Data from oda.ft.dk", "Summaries AI-generated")
 
 #### 1.4 Vote Storage & Session
 
 - [x] 1.4.1 Implement `src/hooks/use-votes.ts` — CRUD for votes in localStorage, duplicate vote prevention
-- [ ] 1.4.2 Implement `src/hooks/use-constituency.ts` — postcode lookup, save/load constituency preference
+- [x] 1.4.2 Implement `src/hooks/use-constituency.ts` — postcode lookup, save/load constituency preference
 - [x] 1.4.3 Implement `src/hooks/use-proposals.ts` — fetch proposals from mock data, filter by status
 
 ### 2. User Journey: Citizen — Reviewing Parliamentary Results

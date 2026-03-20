@@ -9,6 +9,7 @@ import { proposals } from "@/lib/mock-data";
 export interface UseProposalsResult {
   proposals: Proposal[];
   proposalsByStatus: (status: ProposalStatus) => Proposal[];
+  getProposalById: (id: string) => Proposal | null;
 }
 
 export const useProposals = (): UseProposalsResult => {
@@ -17,8 +18,14 @@ export const useProposals = (): UseProposalsResult => {
     []
   );
 
+  const getProposalById = useMemo(
+    () => (id: string): Proposal | null => proposals.find((proposal) => proposal.id === id) ?? null,
+    []
+  );
+
   return {
     proposals: [...proposals],
-    proposalsByStatus
+    proposalsByStatus,
+    getProposalById
   };
 };

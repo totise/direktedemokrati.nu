@@ -125,13 +125,13 @@ direktedemokrati.nu/
 
 #### 1.2 Vote Feed Screen
 
-- [ ] 1.2.1 Build `src/app/vote/page.tsx` — VoteFeedScreen with sticky header and segmented control (Current Votes / Closing Soon)
-- [ ] 1.2.2 Build `src/components/proposal-card.tsx` — reusable card with title, summary teaser, countdown, vote distribution bar, "Vote Now" action
-- [ ] 1.2.3 Build `src/components/vote-bar.tsx` — horizontal For/Against percentage bar
-- [ ] 1.2.4 Implement tab filtering logic (Current Votes vs Closing Soon)
-- [ ] 1.2.5 Implement empty state with "How It Works" educational card
-- [ ] 1.2.6 Wire proposal card tap to navigate to `/proposal/[id]`
-- [ ] 1.2.7 Implement redirect from `/` to `/vote`
+- [x] 1.2.1 Build `src/app/vote/page.tsx` — VoteFeedScreen with sticky header and segmented control (Current Votes / Closing Soon)
+- [x] 1.2.2 Build `src/components/proposal-card.tsx` — reusable card with title, summary teaser, countdown, vote distribution bar, "Vote Now" action
+- [x] 1.2.3 Build `src/components/vote-bar.tsx` — horizontal For/Against percentage bar
+- [x] 1.2.4 Implement tab filtering logic (Current Votes vs Closing Soon)
+- [x] 1.2.5 Implement empty state with "How It Works" educational card
+- [x] 1.2.6 Wire proposal card tap to navigate to `/proposal/[id]`
+- [x] 1.2.7 Implement redirect from `/` to `/vote`
 
 #### 1.3 Proposal Detail Screen
 
@@ -149,9 +149,9 @@ direktedemokrati.nu/
 
 #### 1.4 Vote Storage & Session
 
-- [ ] 1.4.1 Implement `src/hooks/use-votes.ts` — CRUD for votes in localStorage, duplicate vote prevention
+- [x] 1.4.1 Implement `src/hooks/use-votes.ts` — CRUD for votes in localStorage, duplicate vote prevention
 - [ ] 1.4.2 Implement `src/hooks/use-constituency.ts` — postcode lookup, save/load constituency preference
-- [ ] 1.4.3 Implement `src/hooks/use-proposals.ts` — fetch proposals from mock data, filter by status
+- [x] 1.4.3 Implement `src/hooks/use-proposals.ts` — fetch proposals from mock data, filter by status
 
 ### 2. User Journey: Citizen — Reviewing Parliamentary Results
 

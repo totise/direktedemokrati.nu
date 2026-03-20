@@ -117,11 +117,11 @@ direktedemokrati.nu/
 
 #### 1.1 Shell Layout & Navigation
 
-- [ ] 1.1.1 Build root layout (`src/app/layout.tsx`) with warm background, font classes, viewport meta
-- [ ] 1.1.2 Build bottom tab navigation (`src/components/layout/bottom-nav.tsx`) — Vote, Results, MPs tabs with active state
-- [ ] 1.1.3 Build top header (`src/components/layout/header.tsx`) — logo, notification indicator, hamburger menu
-- [ ] 1.1.4 Build hamburger menu drawer (`src/components/layout/hamburger-menu.tsx`) — links to About, Find Constituency
-- [ ] 1.1.5 Implement anonymous session hook (`src/hooks/use-session.ts`) — generate/persist session ID in localStorage
+- [x] 1.1.1 Build root layout (`src/app/layout.tsx`) with warm background, font classes, viewport meta
+- [x] 1.1.2 Build bottom tab navigation (`src/components/layout/bottom-nav.tsx`) — Vote, Results, MPs tabs with active state
+- [x] 1.1.3 Build top header (`src/components/layout/header.tsx`) — logo, notification indicator, hamburger menu
+- [x] 1.1.4 Build hamburger menu drawer (`src/components/layout/hamburger-menu.tsx`) — links to About, Find Constituency
+- [x] 1.1.5 Implement anonymous session hook (`src/hooks/use-session.ts`) — generate/persist session ID in localStorage
 
 #### 1.2 Vote Feed Screen
 

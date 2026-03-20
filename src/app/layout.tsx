@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import type { ReactElement, ReactNode } from "react";
 import { Nunito, Space_Grotesk } from "next/font/google";
 
+import Header from "@/components/layout/header";
+
 import "./globals.css";
 import BottomNav from "@/components/layout/bottom-nav";
 
@@ -34,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="da" className={`${nunito.variable} ${spaceGrotesk.variable}`}>
       <body className="min-h-screen bg-[#FFFAF5] font-['Nunito'] text-[#2C2C2C] antialiased">
+        <Header />
         <div className="min-h-screen pb-24">{children}</div>
         <BottomNav />
       </body>

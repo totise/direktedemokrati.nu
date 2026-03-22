@@ -356,12 +356,76 @@ export const mpVotes: MPVote[] = [
     odaVoteId: "oda-vote-1003"
   },
   {
+    id: "mpvote-5",
+    proposalId: "proposal-rent-control-2023",
+    mpId: "mp-morten-messerschmidt",
+    parliamentaryVoteResultId: "vote-result-rent-control",
+    voteChoice: "against",
+    odaVoteId: "oda-vote-1004"
+  },
+  {
+    id: "mpvote-6",
+    proposalId: "proposal-rent-control-2023",
+    mpId: "mp-emilie-engel",
+    parliamentaryVoteResultId: "vote-result-rent-control",
+    voteChoice: "abstain",
+    odaVoteId: "oda-vote-1005"
+  },
+  {
+    id: "mpvote-7",
+    proposalId: "proposal-rent-control-2023",
+    mpId: "mp-anne-birgitte",
+    parliamentaryVoteResultId: "vote-result-rent-control",
+    voteChoice: "abstain",
+    odaVoteId: "oda-vote-1006"
+  },
+  {
     id: "mpvote-4",
     proposalId: "proposal-climate-travel-2023",
     mpId: "mp-morten-messerschmidt",
     parliamentaryVoteResultId: "vote-result-climate-travel",
     voteChoice: "against",
     odaVoteId: "oda-vote-2001"
+  },
+  {
+    id: "mpvote-8",
+    proposalId: "proposal-climate-travel-2023",
+    mpId: "mp-mette-frederiksen",
+    parliamentaryVoteResultId: "vote-result-climate-travel",
+    voteChoice: "for",
+    odaVoteId: "oda-vote-2002"
+  },
+  {
+    id: "mpvote-9",
+    proposalId: "proposal-climate-travel-2023",
+    mpId: "mp-pia-olsen-dyhr",
+    parliamentaryVoteResultId: "vote-result-climate-travel",
+    voteChoice: "for",
+    odaVoteId: "oda-vote-2003"
+  },
+  {
+    id: "mpvote-10",
+    proposalId: "proposal-climate-travel-2023",
+    mpId: "mp-troels-lund-poulsen",
+    parliamentaryVoteResultId: "vote-result-climate-travel",
+    voteChoice: "against",
+    odaVoteId: "oda-vote-2004"
+  },
+  {
+    id: "mpvote-11",
+    proposalId: "proposal-climate-travel-2023",
+    mpId: "mp-emilie-engel",
+    parliamentaryVoteResultId: "vote-result-climate-travel",
+    voteChoice: "abstain",
+    odaVoteId: "oda-vote-2005"
+  },
+  {
+    id: "mpvote-12",
+    proposalId: "proposal-climate-travel-2023",
+    mpId: "mp-anne-birgitte",
+    parliamentaryVoteResultId: "vote-result-climate-travel",
+    voteChoice: "for",
+    odaVoteId: "oda-vote-2006"
   }
 ] as const;
 

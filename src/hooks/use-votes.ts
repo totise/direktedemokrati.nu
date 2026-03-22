@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import type { VoteChoice, UserVote } from "@/types";
 
 import { useSession } from "@/hooks/use-session";
+import { userVotes as mockUserVotes } from "@/lib/mock-data";
 
 const VOTES_STORAGE_KEY = "direkte-demokrati.user-votes";
 
@@ -18,12 +19,15 @@ const readVotes = (): UserVote[] => {
   }
 };
 
+const createDemoVotes = (): UserVote[] => [...mockUserVotes];
+
 const persistVotes = (votes: UserVote[]): void => {
   window.localStorage.setItem(VOTES_STORAGE_KEY, JSON.stringify(votes));
 };
 
 const createVoteId = (): string =>
-  globalThis.crypto?.randomUUID?.() ?? `vote-${Math.random().toString(36).slice(2, 10)}`;
+  globalThis.crypto?.randomUUID?.() ??
+  `vote-${Math.random().toString(36).slice(2, 10)}`;
 
 export interface CastVoteInput {
   proposalId: string;
@@ -44,14 +48,24 @@ export const useVotes = (): UseVotesResult => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setVotes(readVotes());
+    const storedVotes = readVotes();
+    const nextVotes = storedVotes.length > 0 ? storedVotes : createDemoVotes();
+
+    if (storedVotes.length === 0) {
+      persistVotes(nextVotes);
+    }
+
+    setVotes(nextVotes);
     setIsLoaded(true);
   }, []);
 
   const getVoteForProposal = useCallback(
     (proposalId: string): UserVote | null =>
-      votes.find((vote) => vote.proposalId === proposalId && vote.sessionFingerprint === session?.fingerprint) ??
-      null,
+      votes.find(
+        (vote) =>
+          vote.proposalId === proposalId &&
+          vote.sessionFingerprint === session?.fingerprint
+      ) ?? null,
     [session?.fingerprint, votes]
   );
 
@@ -62,7 +76,9 @@ export const useVotes = (): UseVotesResult => {
       }
 
       const existingVote = votes.find(
-        (vote) => vote.proposalId === input.proposalId && vote.sessionFingerprint === session.fingerprint
+        (vote) =>
+          vote.proposalId === input.proposalId &&
+          vote.sessionFingerprint === session.fingerprint
       );
 
       if (existingVote) {

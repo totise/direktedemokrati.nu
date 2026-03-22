@@ -157,11 +157,11 @@ direktedemokrati.nu/
 
 #### 2.1 User Votes History Screen
 
-- [ ] 2.1.1 Build `src/app/results/page.tsx` — UserVotesHistoryScreen with "Your Votes" / "Archive" tab switcher
-- [ ] 2.1.2 Build vote history list divided into "Awaiting Result" and "Concluded" sections
-- [ ] 2.1.3 Each row: proposal title, user's vote badge, date, status, match/mismatch indicator for concluded items
-- [ ] 2.1.4 Implement empty state encouraging exploration
-- [ ] 2.1.5 Wire tap navigation: pending → ProposalDetail, concluded → ResultsView
+- [x] 2.1.1 Build `src/app/results/page.tsx` — UserVotesHistoryScreen with "Your Votes" / "Archive" tab switcher
+- [x] 2.1.2 Build vote history list divided into "Awaiting Result" and "Concluded" sections
+- [x] 2.1.3 Each row: proposal title, user's vote badge, date, status, match/mismatch indicator for concluded items
+- [x] 2.1.4 Implement empty state encouraging exploration
+- [x] 2.1.5 Wire tap navigation: pending → ProposalDetail, concluded → ResultsView
 
 #### 2.2 Results View Screen
 

@@ -5,10 +5,11 @@ import { useEffect, useState } from "react";
 import type { UserSession } from "@/types";
 
 const SESSION_STORAGE_KEY = "direkte-demokrati.session";
+const DEMO_SESSION_FINGERPRINT = "demo-session-fingerprint";
 
 const createSession = (): UserSession => {
   const now = new Date().toISOString();
-  const id = globalThis.crypto?.randomUUID?.() ?? `session-${Math.random().toString(36).slice(2, 10)}`;
+  const id = DEMO_SESSION_FINGERPRINT;
 
   return {
     id,

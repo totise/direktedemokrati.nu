@@ -16,7 +16,11 @@ export const constituencies: Constituency[] = [
     id: "constituency-copenhagen-east",
     name: "Københavns Storkreds",
     regionCode: "HOVEDSTADEN",
-    postcodeRanges: [[1000, 1299], [1300, 1499], [1500, 1999]],
+    postcodeRanges: [
+      [1000, 1299],
+      [1300, 1499],
+      [1500, 1999]
+    ],
     seatCount: 15
   },
   {
@@ -60,7 +64,8 @@ export const proposals: Proposal[] = [
   {
     id: "proposal-climate-tax-2024",
     odaReferenceId: "ft-2024-001",
-    officialTitle: "Forslag til lov om forhøjelse af klimaafgiften på industrien",
+    officialTitle:
+      "Forslag til lov om forhøjelse af klimaafgiften på industrien",
     aiSummary:
       "Forslaget hæver klimaafgiften for store industrivirksomheder for at accelerere grøn omstilling og finansiere støtteordninger til lavemissions-teknologi.",
     status: "open_for_voting",
@@ -71,7 +76,8 @@ export const proposals: Proposal[] = [
     isFeatured: true,
     publicVoteCountFor: 64,
     publicVoteCountAgainst: 36,
-    curatorNotes: "High public interest; strong media coverage across energy and industry desks.",
+    curatorNotes:
+      "High public interest; strong media coverage across energy and industry desks.",
     createdAt: "2026-03-14T08:30:00.000Z",
     updatedAt: "2026-03-18T14:15:00.000Z"
   },
@@ -125,7 +131,8 @@ export const proposals: Proposal[] = [
     isFeatured: false,
     publicVoteCountFor: 49,
     publicVoteCountAgainst: 51,
-    curatorNotes: "Public result published; useful for results comparison screen.",
+    curatorNotes:
+      "Public result published; useful for results comparison screen.",
     createdAt: "2026-02-10T08:20:00.000Z",
     updatedAt: "2026-02-21T09:40:00.000Z"
   },
@@ -150,7 +157,8 @@ export const proposals: Proposal[] = [
   {
     id: "proposal-tax-reform-2024",
     odaReferenceId: "ft-2024-003",
-    officialTitle: "Forslag til lov om ændring af skattefradrag for lavindkomstfamilier",
+    officialTitle:
+      "Forslag til lov om ændring af skattefradrag for lavindkomstfamilier",
     aiSummary:
       "Forslaget målretter skattefradrag mod lavindkomstfamilier med børn og finansieres gennem en justering af erhvervsfradrag.",
     status: "draft",
@@ -183,7 +191,8 @@ export const mediaCitations: MediaCitation[] = [
     proposalId: "proposal-climate-tax-2024",
     sourceName: "Politiken",
     sourceUrl: "https://politiken.dk/klima/",
-    quoteText: "Industrien advarer mod markante omkostninger, mens grønne organisationer kalder forslaget nødvendigt.",
+    quoteText:
+      "Industrien advarer mod markante omkostninger, mens grønne organisationer kalder forslaget nødvendigt.",
     stance: "neutral",
     publicationDate: "2026-03-16T08:00:00.000Z",
     addedBy: "system"
@@ -193,7 +202,8 @@ export const mediaCitations: MediaCitation[] = [
     proposalId: "proposal-climate-tax-2024",
     sourceName: "Berlingske",
     sourceUrl: "https://berlingske.dk/erhverv/",
-    quoteText: "Virksomheder frygter færre investeringer, hvis afgiften hæves for hurtigt.",
+    quoteText:
+      "Virksomheder frygter færre investeringer, hvis afgiften hæves for hurtigt.",
     stance: "against",
     publicationDate: "2026-03-15T12:30:00.000Z",
     addedBy: "system"
@@ -203,7 +213,8 @@ export const mediaCitations: MediaCitation[] = [
     proposalId: "proposal-health-digital-2024",
     sourceName: "DR Nyheder",
     sourceUrl: "https://dr.dk/nyheder/",
-    quoteText: "Patientorganisationer ser flere fordele end risici, hvis sikkerheden følger med.",
+    quoteText:
+      "Patientorganisationer ser flere fordele end risici, hvis sikkerheden følger med.",
     stance: "for",
     publicationDate: "2026-03-14T09:15:00.000Z",
     addedBy: "system"
@@ -213,7 +224,8 @@ export const mediaCitations: MediaCitation[] = [
     proposalId: "proposal-rent-control-2023",
     sourceName: "Jyllands-Posten",
     sourceUrl: "https://jyllands-posten.dk/debat/",
-    quoteText: "Økonomer er delte om, hvorvidt reguleringen vil dæmpe eller forværre boligmarkedet.",
+    quoteText:
+      "Økonomer er delte om, hvorvidt reguleringen vil dæmpe eller forværre boligmarkedet.",
     stance: "neutral",
     publicationDate: "2026-02-19T07:45:00.000Z",
     addedBy: "system"
@@ -368,7 +380,7 @@ export const userVotes: UserVote[] = [
   {
     id: "user-vote-1",
     proposalId: "proposal-climate-tax-2024",
-    sessionFingerprint: "session-9f2f0d",
+    sessionFingerprint: "demo-session-fingerprint",
     verifiedUserId: null,
     voteChoice: "for",
     constituencyId: "constituency-copenhagen-east",
@@ -378,7 +390,7 @@ export const userVotes: UserVote[] = [
   {
     id: "user-vote-2",
     proposalId: "proposal-rent-control-2023",
-    sessionFingerprint: "session-9f2f0d",
+    sessionFingerprint: "demo-session-fingerprint",
     verifiedUserId: null,
     voteChoice: "against",
     constituencyId: "constituency-copenhagen-east",
@@ -390,7 +402,7 @@ export const userVotes: UserVote[] = [
 export const userSessions: UserSession[] = [
   {
     id: "session-1",
-    fingerprint: "session-9f2f0d",
+    fingerprint: "demo-session-fingerprint",
     createdAt: "2026-02-19T19:55:00.000Z",
     lastActive: "2026-03-18T18:00:00.000Z",
     constituencyId: "constituency-copenhagen-east",

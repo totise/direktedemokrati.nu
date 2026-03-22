@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="direktedemokrati.nu">
+  <rect width="512" height="512" rx="128" fill="#5B4FCF"/>
+  <rect x="64" y="64" width="384" height="384" rx="96" fill="#5B4FCF"/>
+  <circle cx="256" cy="176" r="88" fill="#FFFFFF" opacity="0.16"/>
+  <path d="M170 334c0-47 38-85 86-85h0c48 0 86 38 86 85v18c0 15-12 27-27 27H197c-15 0-27-12-27-27v-18Z" fill="#FFFFFF"/>
+  <circle cx="206" cy="172" r="24" fill="#FFFAF5"/>
+  <circle cx="306" cy="172" r="24" fill="#FFFAF5"/>
+  <path d="M201 168h110" stroke="#5B4FCF" stroke-width="18" stroke-linecap="round"/>
+</svg>

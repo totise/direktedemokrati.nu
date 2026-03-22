@@ -11,6 +11,7 @@ import { proposals as mockProposals } from "@/lib/mock-data";
 
 import ProposalCard from "@/components/proposal-card";
 import { useVotes } from "@/hooks/use-votes";
+import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
 type FeedTab = "current" | "closing";
 
 const CLOSING_SOON_DAYS = 3;
@@ -27,16 +28,29 @@ export default function VoteFeedPage(): ReactElement {
   const [activeTab, setActiveTab] = useState<FeedTab>("current");
   const { getVoteForProposal, isLoaded } = useVotes();
 
+  usePullToRefresh({
+    onRefresh: () => window.location.reload()
+  });
+
   const currentVotes = useMemo(
-    () => mockProposals.filter((proposal) => proposal.status === "open_for_voting" && !isClosingSoon(proposal)),
+    () =>
+      mockProposals.filter(
+        (proposal) =>
+          proposal.status === "open_for_voting" && !isClosingSoon(proposal)
+      ),
     []
   );
   const closingSoonVotes = useMemo(
-    () => mockProposals.filter((proposal) => proposal.status === "open_for_voting" && isClosingSoon(proposal)),
+    () =>
+      mockProposals.filter(
+        (proposal) =>
+          proposal.status === "open_for_voting" && isClosingSoon(proposal)
+      ),
     []
   );
 
-  const activeProposals = activeTab === "closing" ? closingSoonVotes : currentVotes;
+  const activeProposals =
+    activeTab === "closing" ? closingSoonVotes : currentVotes;
 
   const renderEmptyState = (): React.ReactElement => (
     <div className="flex flex-col items-center justify-center px-6 pb-6 pt-10">
@@ -50,9 +64,12 @@ export default function VoteFeedPage(): ReactElement {
         </div>
       </div>
 
-      <h2 className="mb-2 text-center text-xl font-bold text-[#2C2C2C]">Alt er i orden!</h2>
+      <h2 className="mb-2 text-center text-xl font-bold text-[#2C2C2C]">
+        Alt er i orden!
+      </h2>
       <p className="text-center text-sm text-[#6B7280]">
-        Der er ingen aktive forslag lige nu. Kig tilbage senere eller se tidligere resultater.
+        Der er ingen aktive forslag lige nu. Kig tilbage senere eller se
+        tidligere resultater.
       </p>
     </div>
   );
@@ -88,7 +105,7 @@ export default function VoteFeedPage(): ReactElement {
   );
 
   return (
-    <div className="min-h-screen bg-[#FFFAF5] font-['Nunito'] pb-32">
+    <div className="min-h-screen bg-[#FFFAF5] font-['Nunito'] pb-32 pt-safe">
       <main className="px-5 pt-4">
         <div className="mb-4 flex rounded-xl bg-[#E5E7EB] p-1">
           <button
@@ -110,7 +127,10 @@ export default function VoteFeedPage(): ReactElement {
         {!isLoaded ? (
           <div className="space-y-4">
             {mockProposals.slice(0, 2).map((proposal) => (
-              <div className="h-44 animate-pulse rounded-2xl bg-white shadow-[0_4px_16px_rgba(0,0,0,0.04)]" key={proposal.id} />
+              <div
+                className="h-44 animate-pulse rounded-2xl bg-white shadow-[0_4px_16px_rgba(0,0,0,0.04)]"
+                key={proposal.id}
+              />
             ))}
           </div>
         ) : activeProposals.length === 0 ? (
@@ -125,7 +145,13 @@ export default function VoteFeedPage(): ReactElement {
 
               return (
                 <ProposalCard
-                  forPercentage={proposal.id === "proposal-climate-tax-2024" ? 58 : proposal.id === "proposal-health-digital-2024" ? 64 : 71}
+                  forPercentage={
+                    proposal.id === "proposal-climate-tax-2024"
+                      ? 58
+                      : proposal.id === "proposal-health-digital-2024"
+                        ? 64
+                        : 71
+                  }
                   id={proposal.id}
                   key={proposal.id}
                   scheduledVoteDate={proposal.scheduledVoteDate}

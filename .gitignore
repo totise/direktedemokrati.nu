@@ -9,6 +9,10 @@ tsconfig.tsbuildinfo
 # build
 dist
 
+# next-pwa generated assets
+public/sw.js
+public/workbox-*.js
+
 # env
 .env*
 

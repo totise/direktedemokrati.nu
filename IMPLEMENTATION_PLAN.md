@@ -218,12 +218,12 @@ direktedemokrati.nu/
 
 ### 5. Polish & PWA
 
-- [ ] 5.1 Add PWA manifest (`public/manifest.json`) with app name, icons, theme color
-- [ ] 5.2 Configure service worker via next-pwa for offline shell
-- [ ] 5.3 Add viewport meta tags for mobile (status bar, safe area insets)
-- [ ] 5.4 Add pull-to-refresh behavior on list views
-- [ ] 5.5 Add page transition animations between screens
-- [ ] 5.6 Add loading skeletons for data-fetching states
-- [ ] 5.7 Test all screens at 390×844 viewport and common mobile sizes
-- [ ] 5.8 Run `npm run build` and `npx tsc --noEmit` — fix any errors
-- [ ] 5.9 Run `npm run lint` — fix any warnings
+- [x] 5.1 Add PWA manifest (`public/manifest.json`) with app name, icons, theme color
+- [x] 5.2 Configure service worker via next-pwa for offline shell
+- [x] 5.3 Add viewport meta tags for mobile (status bar, safe area insets)
+- [x] 5.4 Add pull-to-refresh behavior on list views
+- [x] 5.5 Add page transition animations between screens
+- [x] 5.6 Add loading skeletons for data-fetching states
+- [x] 5.7 Test all screens at 390×844 viewport and common mobile sizes
+- [x] 5.8 Run `npm run build` and `npx tsc --noEmit` — fix any errors
+- [x] 5.9 Run `npm run lint` — fix any warnings

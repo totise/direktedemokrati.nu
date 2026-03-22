@@ -31,7 +31,7 @@ export default function BottomNav(): ReactElement {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-40 border-t border-[#F3F4F6] bg-white/95 backdrop-blur-md">
-      <div className="flex items-center justify-around py-3 pb-[calc(1rem+env(safe-area-inset-bottom))]">
+      <div className="pb-safe flex items-center justify-around py-3">
         {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
           const active = isActive(href);
 

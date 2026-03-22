@@ -187,11 +187,11 @@ direktedemokrati.nu/
 
 #### 3.1 MP List Screen
 
-- [ ] 3.1.1 Build `src/app/mps/page.tsx` — MPListScreen with search bar and party filter chips
-- [ ] 3.1.2 Build alphabetical MP card list — photo, name, party badge, constituency
-- [ ] 3.1.3 Implement real-time name search filtering
-- [ ] 3.1.4 Implement party chip filtering
-- [ ] 3.1.5 Wire MP card tap to navigate to `/mps/[id]`
+- [x] 3.1.1 Build `src/app/mps/page.tsx` — MPListScreen with search bar and party filter chips
+- [x] 3.1.2 Build alphabetical MP card list — photo, name, party badge, constituency
+- [x] 3.1.3 Implement real-time name search filtering
+- [x] 3.1.4 Implement party chip filtering
+- [x] 3.1.5 Wire MP card tap to navigate to `/mps/[id]`
 
 #### 3.2 MP Profile Screen
 

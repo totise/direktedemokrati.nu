@@ -3,7 +3,7 @@
 import type { ReactElement } from "react";
 import { useMemo, useState } from "react";
 
-import { Lightbulb, Menu, Vote, Bell } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 
 import type { Proposal } from "@/types";
 
@@ -43,10 +43,10 @@ export default function VoteFeedPage(): ReactElement {
       <div className="relative mb-6 h-32 w-32">
         <div className="absolute inset-0 rounded-full bg-[#F3F4F6] opacity-50" />
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[#5B4FCF] opacity-20">
-          <Vote className="h-20 w-20" />
+          <span className="text-6xl">◌</span>
         </div>
         <div className="absolute bottom-2 right-4 text-[#FF6B35]">
-          <Bell className="h-10 w-10" />
+          <span className="text-4xl">◉</span>
         </div>
       </div>
 
@@ -89,26 +89,8 @@ export default function VoteFeedPage(): ReactElement {
 
   return (
     <div className="min-h-screen bg-[#FFFAF5] font-['Nunito'] pb-32">
-      <header className="sticky top-0 z-30 bg-[#FFFAF5] px-5 pb-2 pt-6">
-        <div className="mb-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#5B4FCF]">
-              <Vote className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-[#2C2C2C]">direkte</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <button className="relative rounded-full p-2 transition-colors hover:bg-[#F3F4F6]">
-              <Bell className="h-6 w-6 text-[#2C2C2C]" />
-              <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full border-2 border-[#FFFAF5] bg-[#FF6B35]" />
-            </button>
-            <button className="rounded-full p-2 transition-colors hover:bg-[#F3F4F6]">
-              <Menu className="h-6 w-6 text-[#2C2C2C]" />
-            </button>
-          </div>
-        </div>
-
-        <div className="mb-2 flex rounded-xl bg-[#E5E7EB] p-1">
+      <main className="px-5 pt-4">
+        <div className="mb-4 flex rounded-xl bg-[#E5E7EB] p-1">
           <button
             className={`flex-1 rounded-lg py-2.5 text-sm font-bold transition-all duration-200 ${activeTab === "current" ? "bg-white text-[#2C2C2C] shadow-sm" : "text-[#6B7280] hover:text-[#2C2C2C]"}`}
             onClick={() => setActiveTab("current")}
@@ -124,9 +106,7 @@ export default function VoteFeedPage(): ReactElement {
             Lukker snart
           </button>
         </div>
-      </header>
 
-      <main className="px-5 pt-2">
         {!isLoaded ? (
           <div className="space-y-4">
             {mockProposals.slice(0, 2).map((proposal) => (

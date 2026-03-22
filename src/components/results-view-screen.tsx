@@ -17,6 +17,7 @@ import type {
 
 import MpAvatar from "@/components/mp-avatar";
 import PartyChip from "@/components/party-chip";
+import ShareModal from "@/components/share-modal";
 import { useConstituency } from "@/hooks/use-constituency";
 import { useVotes } from "@/hooks/use-votes";
 import {
@@ -85,6 +86,7 @@ export default function ResultsViewScreen({
   const { getVoteForProposal } = useVotes();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedParty, setSelectedParty] = useState<string | null>(null);
+  const [showShareModal, setShowShareModal] = useState(false);
 
   const proposal = getProposal(proposalId);
   const parliamentaryResult = getResult(proposalId);
@@ -194,6 +196,7 @@ export default function ResultsViewScreen({
         </div>
         <button
           className="rounded-full p-2 -mr-2 hover:bg-[#F3F4F6]"
+          onClick={() => setShowShareModal(true)}
           type="button"
         >
           <Share2 className="h-6 w-6 text-[#2C2C2C]" />
@@ -406,6 +409,12 @@ export default function ResultsViewScreen({
         Individuelle stemmer
       </h2>
       {renderGrid()}
+      {showShareModal ? (
+        <ShareModal
+          onClose={() => setShowShareModal(false)}
+          shareUrl={`/results/${proposalId}`}
+        />
+      ) : null}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-import { Search, SlidersHorizontal, Users, X } from "lucide-react";
+import { Search, Users, X } from "lucide-react";
 
 import PartyChip from "@/components/party-chip";
 import { constituencies, mps } from "@/lib/mock-data";
@@ -139,13 +139,6 @@ export default function MpListPage() {
             </div>
             <h1 className="text-xl font-bold text-[#2C2C2C]">MF&apos;er</h1>
           </div>
-
-          <button
-            className="rounded-full p-2 transition-colors hover:bg-[#F3F4F6]"
-            type="button"
-          >
-            <SlidersHorizontal className="h-6 w-6 text-[#2C2C2C]" />
-          </button>
         </div>
 
         <div className="relative mb-4">

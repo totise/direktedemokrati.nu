@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import {
   ArrowLeft,
@@ -28,6 +28,8 @@ import {
 import { formatFullName } from "@/lib/utils";
 
 import type { MP, ParliamentaryVoteChoice, ParliamentaryResult } from "@/types";
+
+import ShareModal from "@/components/share-modal";
 
 export interface MpProfileScreenProps {
   mpId: string;
@@ -164,6 +166,7 @@ const getPartyMajorityVote = (
 
 export default function MpProfileScreen({ mpId }: MpProfileScreenProps) {
   const { votes, isLoaded, getVoteForProposal } = useVotes();
+  const [showShareModal, setShowShareModal] = useState(false);
 
   const mp = useMemo<MP | null>(
     () => mps.find((entry) => entry.id === mpId) ?? null,
@@ -244,6 +247,7 @@ export default function MpProfileScreen({ mpId }: MpProfileScreenProps) {
         <h1 className="text-lg font-bold text-[#2C2C2C]">Profil</h1>
         <button
           className="-mr-2 rounded-full p-2 transition-colors hover:bg-[#F3F4F6]"
+          onClick={() => setShowShareModal(true)}
           type="button"
         >
           <Share2 className="h-6 w-6 text-[#2C2C2C]" />
@@ -508,6 +512,12 @@ export default function MpProfileScreen({ mpId }: MpProfileScreenProps) {
         {renderStats()}
         {renderVotingHistory()}
       </main>
+      {showShareModal ? (
+        <ShareModal
+          onClose={() => setShowShareModal(false)}
+          shareUrl={`/mps/${mpId}`}
+        />
+      ) : null}
     </div>
   );
 }

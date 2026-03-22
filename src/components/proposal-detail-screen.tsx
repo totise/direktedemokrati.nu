@@ -5,7 +5,6 @@ import type { ReactElement } from "react";
 
 import Image from "next/image";
 import {
-  Bookmark,
   ChevronDown,
   Clock,
   ExternalLink,
@@ -282,30 +281,30 @@ export default function ProposalDetailScreen({
         <p className="mb-4 text-center font-bold text-[#2C2C2C]">
           Hvad ville du stemme?
         </p>
-        <div className="mb-3 grid grid-cols-2 gap-4">
+        <div className="mb-3 grid grid-cols-2 gap-3">
           <button
-            className="rounded-2xl bg-[#22A06B] p-4 font-bold text-white shadow-lg shadow-[#22A06B]/20 transition-all duration-200 active:scale-95"
+            className="rounded-2xl bg-[#22A06B] p-2.5 font-bold text-white shadow-lg shadow-[#22A06B]/20 transition-all duration-200 active:scale-95"
             onClick={() =>
               castVote({ proposalId: proposal.id, voteChoice: "for" })
             }
             type="button"
           >
-            <div className="flex flex-col items-center gap-2">
-              <ThumbsUp className="h-8 w-8" />
-              <span className="text-lg">For</span>
+            <div className="flex items-center justify-center gap-2">
+              <ThumbsUp className="h-6 w-6" />
+              <span className="text-base">For</span>
             </div>
           </button>
 
           <button
-            className="rounded-2xl bg-[#E34935] p-4 font-bold text-white shadow-lg shadow-[#E34935]/20 transition-all duration-200 active:scale-95"
+            className="rounded-2xl bg-[#E34935] p-2.5 font-bold text-white shadow-lg shadow-[#E34935]/20 transition-all duration-200 active:scale-95"
             onClick={() =>
               castVote({ proposalId: proposal.id, voteChoice: "against" })
             }
             type="button"
           >
-            <div className="flex flex-col items-center gap-2">
-              <ThumbsDown className="h-8 w-8" />
-              <span className="text-lg">Imod</span>
+            <div className="flex items-center justify-center gap-2">
+              <ThumbsDown className="h-6 w-6" />
+              <span className="text-base">Imod</span>
             </div>
           </button>
         </div>
@@ -343,29 +342,13 @@ export default function ProposalDetailScreen({
           </div>
         </div>
 
-        <div className="mb-3 grid grid-cols-2 gap-3">
-          <button
-            className="flex items-center justify-center gap-2 rounded-xl bg-[#F3F4F6] py-3 text-sm font-bold text-[#2C2C2C] transition-colors hover:bg-[#E5E7EB]"
-            type="button"
-          >
-            <Bookmark className="h-4 w-4" />
-            Gem afstemning
-          </button>
-          <button
-            className="flex items-center justify-center gap-2 rounded-xl bg-[#5B4FCF] py-3 text-sm font-bold text-white transition-colors hover:bg-[#3D329F]"
-            onClick={() => setShowShareModal(true)}
-            type="button"
-          >
-            <Share2 className="h-4 w-4" />
-            Del
-          </button>
-        </div>
-
         <button
-          className="w-full rounded-xl border border-[#E5E7EB] py-3 text-sm font-bold text-[#6B7280] transition-colors hover:bg-[#F9FAFB]"
+          className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#5B4FCF] py-3 text-sm font-bold text-white transition-colors hover:bg-[#3D329F]"
+          onClick={() => setShowShareModal(true)}
           type="button"
         >
-          Send kvittering på e-mail
+          <Share2 className="h-4 w-4" />
+          Del
         </button>
       </div>
     </div>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:restart": "(lsof -tiTCP:3000 -sTCP:LISTEN || true; lsof -tiTCP:3003 -sTCP:LISTEN || true) | sort -u | xargs -r kill -9; rm -rf .next && nohup npm run dev >/tmp/direktedemokrati-dev.log 2>&1 &",
+    "dev:restart": "bash scripts/dev-restart.sh",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

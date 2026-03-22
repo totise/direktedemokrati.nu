@@ -205,10 +205,10 @@ direktedemokrati.nu/
 
 #### 4.1 Find Constituency Screen
 
-- [ ] 4.1.1 Build `src/app/find-constituency/page.tsx` — postcode input, validation, results display
-- [ ] 4.1.2 Display constituency name and list of MPs with photos/party when postcode submitted
-- [ ] 4.1.3 Implement "Save as My Constituency" button persisting to localStorage
-- [ ] 4.1.4 Educational text about the Danish constituency system
+- [x] 4.1.1 Build `src/app/find-constituency/page.tsx` — postcode input, validation, results display
+- [x] 4.1.2 Display constituency name and list of MPs with photos/party when postcode submitted
+- [x] 4.1.3 Implement "Save as My Constituency" button persisting to localStorage
+- [x] 4.1.4 Educational text about the Danish constituency system
 
 #### 4.2 About & Methodology Screen
 

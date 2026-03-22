@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:restart": "lsof -ti:3000 | xargs -r kill && nohup npm run dev >/tmp/direktedemokrati-dev.log 2>&1 &",
+    "dev:restart": "pkill -f \"next dev\" || true; pkill -f \"next-server\" || true; rm -rf .next && nohup npm run dev >/tmp/direktedemokrati-dev.log 2>&1 &",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

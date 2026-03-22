@@ -177,11 +177,11 @@ direktedemokrati.nu/
 
 #### 2.3 Archive Screen
 
-- [ ] 2.3.1 Build `src/app/results/archive/page.tsx` — ArchiveScreen with concluded proposals grouped by session
-- [ ] 2.3.2 Each entry: title, date, Passed/Failed badge, public alignment indicator
-- [ ] 2.3.3 Implement outcome filter (Passed / Failed)
-- [ ] 2.3.4 Implement keyword search
-- [ ] 2.3.5 Wire tap navigation to ResultsView
+- [x] 2.3.1 Build `src/app/results/archive/page.tsx` — ArchiveScreen with concluded proposals grouped by session
+- [x] 2.3.2 Each entry: title, date, Passed/Failed badge, public alignment indicator
+- [x] 2.3.3 Implement outcome filter (Passed / Failed)
+- [x] 2.3.4 Implement keyword search
+- [x] 2.3.5 Wire tap navigation to ResultsView
 
 ### 3. User Journey: Citizen — Exploring MP Profiles
 

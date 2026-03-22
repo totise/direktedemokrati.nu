@@ -165,15 +165,15 @@ direktedemokrati.nu/
 
 #### 2.2 Results View Screen
 
-- [ ] 2.2.1 Build `src/app/results/[id]/page.tsx` — ResultsViewScreen with comparison header (Public vs Parliamentary)
-- [ ] 2.2.2 Build comparison visualization: public For/Against percentages vs parliamentary outcome (Passed/Failed with counts)
-- [ ] 2.2.3 Build `src/components/mp-avatar.tsx` — circular avatar with party-colored border, tooltip, badges
-- [ ] 2.2.4 Build three-column MP vote grid (For / Abstain / Against) with MP avatars
-- [ ] 2.2.5 Build MP name search bar filtering the grid
-- [ ] 2.2.6 Build `src/components/party-chip.tsx` — horizontal scrollable party filter chips
-- [ ] 2.2.7 Implement "Your Representative" badge on local MP avatars (from saved constituency)
-- [ ] 2.2.8 Implement agreement indicator overlay when user voted same as MP
-- [ ] 2.2.9 Wire MP avatar tap to navigate to `/mps/[id]`
+- [x] 2.2.1 Build `src/app/results/[id]/page.tsx` — ResultsViewScreen with comparison header (Public vs Parliamentary)
+- [x] 2.2.2 Build comparison visualization: public For/Against percentages vs parliamentary outcome (Passed/Failed with counts)
+- [x] 2.2.3 Build `src/components/mp-avatar.tsx` — circular avatar with party-colored border, tooltip, badges
+- [x] 2.2.4 Build three-column MP vote grid (For / Abstain / Against) with MP avatars
+- [x] 2.2.5 Build MP name search bar filtering the grid
+- [x] 2.2.6 Build `src/components/party-chip.tsx` — horizontal scrollable party filter chips
+- [x] 2.2.7 Implement "Your Representative" badge on local MP avatars (from saved constituency)
+- [x] 2.2.8 Implement agreement indicator overlay when user voted same as MP
+- [x] 2.2.9 Wire MP avatar tap to navigate to `/mps/[id]`
 
 #### 2.3 Archive Screen
 

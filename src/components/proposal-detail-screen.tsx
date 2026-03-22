@@ -185,7 +185,7 @@ export default function ProposalDetailScreen({
                       : "Neutral"}
                 </span>
               </div>
-              <p className="relative mb-3 text-sm italic text-[#2C2C2C]">
+              <p className="relative mb-3 pl-7 text-sm italic text-[#2C2C2C]">
                 <Quote className="absolute -left-1 -top-2 h-6 w-6 opacity-20" />
                 {citation.quoteText}
               </p>

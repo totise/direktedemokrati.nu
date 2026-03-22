@@ -11,6 +11,7 @@ import type { Proposal, UserVote } from "@/types";
 
 import {
   parliamentaryVoteResults as mockParliamentaryResults,
+  userVotes as mockUserVotes,
   proposals as mockProposals
 } from "@/lib/mock-data";
 import { useVotes } from "@/hooks/use-votes";
@@ -202,6 +203,11 @@ export default function ResultsPage(): ReactElement {
     [votes]
   );
 
+  const concludedDisplayVotes =
+    concludedVotes.length > 0
+      ? concludedVotes
+      : mockUserVotes.filter((v) => !isPending(v.proposalId));
+
   return (
     <div className="min-h-screen bg-[#FFFAF5] font-['Nunito'] pb-28">
       <header className="sticky top-0 z-30 bg-[#FFFAF5] px-5 pt-6 pb-2">
@@ -252,13 +258,13 @@ export default function ResultsPage(): ReactElement {
                 </div>
               )}
 
-              {concludedVotes.length > 0 && (
+              {concludedDisplayVotes.length > 0 && (
                 <div>
                   <SectionHeader
                     title="Afsluttet"
-                    count={concludedVotes.length}
+                    count={concludedDisplayVotes.length}
                   />
-                  {concludedVotes.map((vote) => (
+                  {concludedDisplayVotes.map((vote) => (
                     <VoteCard key={vote.id} vote={vote} />
                   ))}
                 </div>

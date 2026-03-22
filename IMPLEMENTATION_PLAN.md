@@ -195,11 +195,11 @@ direktedemokrati.nu/
 
 #### 3.2 MP Profile Screen
 
-- [ ] 3.2.1 Build `src/app/mps/[id]/page.tsx` — MPProfileScreen with photo header, party badge, constituency, status
-- [ ] 3.2.2 Build voting statistics section — agreement with public, participation rate, party loyalty
-- [ ] 3.2.3 Build chronological voting history list — proposal title, date, MP's vote, public result, match indicator
-- [ ] 3.2.4 Build comparison banner — "You agreed with [MP] on X of Y votes" (from localStorage)
-- [ ] 3.2.5 Wire proposal tap in history to ResultsView
+- [x] 3.2.1 Build `src/app/mps/[id]/page.tsx` — MPProfileScreen with photo header, party badge, constituency, status
+- [x] 3.2.2 Build voting statistics section — agreement with public, participation rate, party loyalty
+- [x] 3.2.3 Build chronological voting history list — proposal title, date, MP's vote, public result, match indicator
+- [x] 3.2.4 Build comparison banner — "You agreed with [MP] on X of Y votes" (from localStorage)
+- [x] 3.2.5 Wire proposal tap in history to ResultsView
 
 ### 4. Utility & Informational Screens
 

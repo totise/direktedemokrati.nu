@@ -5,6 +5,8 @@
 html {
   background: #fffaf5;
   color: #2c2c2c;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -13,4 +15,27 @@ body {
   background: #fffaf5;
   color: #2c2c2c;
   font-family: var(--font-nunito), sans-serif;
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+:root {
+  --safe-top: env(safe-area-inset-top);
+}
+
+.page-transition {
+  animation: page-fade 180ms ease-out;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

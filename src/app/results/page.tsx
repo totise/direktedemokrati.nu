@@ -6,10 +6,14 @@ import { useMemo } from "react";
 import { BarChart3, ThumbsDown, ThumbsUp, Users, Vote } from "lucide-react";
 
 import { parliamentaryVoteResults, proposals } from "@/lib/mock-data";
+import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
 import { useVotes } from "@/hooks/use-votes";
 
 export default function ResultsIndexPage() {
   const { votes } = useVotes();
+  const refreshState = usePullToRefresh({
+    onRefresh: () => window.location.reload()
+  });
 
   const voteRows = useMemo(() => {
     return votes
@@ -152,7 +156,12 @@ export default function ResultsIndexPage() {
         </div>
       </header>
 
-      <main>
+      <main {...refreshState.handlers}>
+        {refreshState.isPulling ? (
+          <div className="mb-3 text-center text-xs font-bold text-[#5B4FCF]">
+            Træk ned for at opdatere
+          </div>
+        ) : null}
         {voteRows.length === 0 ? (
           <div className="rounded-2xl bg-white p-5 text-center shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
             <p className="text-base font-bold text-[#2C2C2C]">

@@ -18,13 +18,24 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "direktedemokrati.nu",
-  description: "Mobile-first civic participation web app"
+  description: "Mobile-first civic participation web app",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "direktedemokrati.nu"
+  },
+  icons: {
+    icon: "/icons/icon.svg",
+    apple: "/icons/maskable-icon.svg"
+  }
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  viewportFit: "cover"
+  viewportFit: "cover",
+  themeColor: "#5B4FCF"
 };
 
 export default function RootLayout({

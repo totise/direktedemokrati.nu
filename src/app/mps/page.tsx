@@ -9,6 +9,7 @@ import { Search, SlidersHorizontal, Users, X } from "lucide-react";
 import PartyChip from "@/components/party-chip";
 import { constituencies, mps } from "@/lib/mock-data";
 import { formatFullName } from "@/lib/utils";
+import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
 
 interface PartyOption {
   label: string;
@@ -30,6 +31,9 @@ const getPartyColor = (party: string): string =>
 export default function MpListPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedParty, setSelectedParty] = useState<string | null>(null);
+  const refreshState = usePullToRefresh({
+    onRefresh: () => window.location.reload()
+  });
 
   const partyOptions = useMemo(() => {
     const entries = new Map<string, PartyOption>();
@@ -192,7 +196,12 @@ export default function MpListPage() {
         </div>
       </header>
 
-      <main>
+      <main {...refreshState.handlers}>
+        {refreshState.isPulling ? (
+          <div className="mb-3 text-center text-xs font-bold text-[#5B4FCF]">
+            Træk ned for at opdatere
+          </div>
+        ) : null}
         <div className="mb-3 flex items-center justify-between px-1">
           <span className="text-sm font-bold text-[#6B7280]">
             {filteredMps.length} MF&apos;er

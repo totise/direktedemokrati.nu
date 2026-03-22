@@ -7,6 +7,7 @@ import { BarChart3, Search, Users, Vote } from "lucide-react";
 
 import { parliamentaryVoteResults, proposals } from "@/lib/mock-data";
 import { clampPercentage, formatPercentage } from "@/lib/utils";
+import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
 
 type OutcomeFilter = "all" | "passed" | "rejected";
 
@@ -61,6 +62,9 @@ const sessionLabels = Array.from(
 export default function ArchivePage() {
   const [filter, setFilter] = useState<OutcomeFilter>("all");
   const [query, setQuery] = useState("");
+  const refreshState = usePullToRefresh({
+    onRefresh: () => window.location.reload()
+  });
 
   const filteredItems = useMemo(
     () =>
@@ -144,7 +148,12 @@ export default function ArchivePage() {
         </div>
       </header>
 
-      <main className="space-y-6">
+      <main className="space-y-6" {...refreshState.handlers}>
+        {refreshState.isPulling ? (
+          <div className="text-center text-xs font-bold text-[#5B4FCF]">
+            Træk ned for at opdatere
+          </div>
+        ) : null}
         {groupedItems.length === 0 ? (
           <div className="rounded-2xl bg-white p-5 text-center shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
             <p className="text-base font-bold text-[#2C2C2C]">

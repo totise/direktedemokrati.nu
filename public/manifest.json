@@ -1,0 +1,23 @@
+{
+  "name": "direktedemokrati.nu",
+  "short_name": "Direkte demokrati",
+  "description": "Anonym, mobil først civic participation app for danske vælgere.",
+  "start_url": "/vote",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFAF5",
+  "theme_color": "#5B4FCF",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icons/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

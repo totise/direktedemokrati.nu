@@ -3,6 +3,8 @@ node_modules
 
 # next
 .next
+public/sw.js
+public/workbox-*.js
 out
 tsconfig.tsbuildinfo
 

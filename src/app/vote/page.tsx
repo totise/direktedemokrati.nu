@@ -12,6 +12,7 @@ import { proposals as mockProposals } from "@/lib/mock-data";
 import ProposalCard from "@/components/proposal-card";
 import { useVotes } from "@/hooks/use-votes";
 import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
+import { RotateCw } from "lucide-react";
 type FeedTab = "current" | "closing";
 
 const CLOSING_SOON_DAYS = 3;
@@ -27,8 +28,7 @@ const isClosingSoon = (proposal: Proposal): boolean => {
 export default function VoteFeedPage(): ReactElement {
   const [activeTab, setActiveTab] = useState<FeedTab>("current");
   const { getVoteForProposal, isLoaded } = useVotes();
-
-  usePullToRefresh({
+  const { isRefreshing, pullDistance } = usePullToRefresh({
     onRefresh: () => window.location.reload()
   });
 
@@ -107,7 +107,7 @@ export default function VoteFeedPage(): ReactElement {
   return (
     <div className="min-h-screen bg-[#FFFAF5] font-['Nunito'] pb-32 pt-safe">
       <main className="px-5 pt-4">
-        <div className="mb-4 flex rounded-xl bg-[#E5E7EB] p-1">
+        <div className="mb-4 flex items-center justify-between rounded-xl bg-[#E5E7EB] p-1">
           <button
             className={`flex-1 rounded-lg py-2.5 text-sm font-bold transition-all duration-200 ${activeTab === "current" ? "bg-white text-[#2C2C2C] shadow-sm" : "text-[#6B7280] hover:text-[#2C2C2C]"}`}
             onClick={() => setActiveTab("current")}
@@ -123,6 +123,15 @@ export default function VoteFeedPage(): ReactElement {
             Lukker snart
           </button>
         </div>
+
+        {pullDistance > 0 || isRefreshing ? (
+          <div className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#5B4FCF] shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+            <RotateCw
+              className={`h-5 w-5 ${isRefreshing ? "animate-spin" : "animate-pulse"}`}
+            />
+            Opdaterer...
+          </div>
+        ) : null}
 
         {!isLoaded ? (
           <div className="space-y-4">

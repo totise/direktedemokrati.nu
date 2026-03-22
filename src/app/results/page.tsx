@@ -3,7 +3,14 @@
 import Link from "next/link";
 import { useMemo } from "react";
 
-import { BarChart3, ThumbsDown, ThumbsUp, Users, Vote } from "lucide-react";
+import {
+  BarChart3,
+  RotateCw,
+  ThumbsDown,
+  ThumbsUp,
+  Users,
+  Vote
+} from "lucide-react";
 
 import { parliamentaryVoteResults, proposals } from "@/lib/mock-data";
 import { useVotes } from "@/hooks/use-votes";
@@ -12,7 +19,7 @@ import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
 export default function ResultsIndexPage() {
   const { votes } = useVotes();
 
-  usePullToRefresh({
+  const { isRefreshing, pullDistance } = usePullToRefresh({
     onRefresh: () => window.location.reload()
   });
 
@@ -140,6 +147,15 @@ export default function ResultsIndexPage() {
     <div className="min-h-screen bg-[#FFFAF5] px-5 pb-28 pt-6 pt-safe font-['Nunito']">
       <header className="sticky top-0 z-30 mb-4 bg-[#FFFAF5] pb-2">
         <h1 className="mb-4 text-2xl font-bold text-[#2C2C2C]">Historik</h1>
+
+        {pullDistance > 0 || isRefreshing ? (
+          <div className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-bold text-[#5B4FCF] shadow-[0_8px_24px_rgba(0,0,0,0.12)]">
+            <RotateCw
+              className={`h-5 w-5 ${isRefreshing ? "animate-spin" : "animate-pulse"}`}
+            />
+            Opdaterer...
+          </div>
+        ) : null}
 
         <div className="flex rounded-xl bg-[#F3F4F6] p-1">
           <Link

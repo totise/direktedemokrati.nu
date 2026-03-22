@@ -1,0 +1,24 @@
+{
+  "name": "direktedemokrati.nu",
+  "short_name": "DirekteDemokrati",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFAF5",
+  "theme_color": "#5B4FCF",
+  "description": "Mobile-first dansk civic participation-app",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

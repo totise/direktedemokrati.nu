@@ -7,9 +7,14 @@ import { BarChart3, ThumbsDown, ThumbsUp, Users, Vote } from "lucide-react";
 
 import { parliamentaryVoteResults, proposals } from "@/lib/mock-data";
 import { useVotes } from "@/hooks/use-votes";
+import { usePullToRefresh } from "@/hooks/use-pull-to-refresh";
 
 export default function ResultsIndexPage() {
   const { votes } = useVotes();
+
+  usePullToRefresh({
+    onRefresh: () => window.location.reload()
+  });
 
   const voteRows = useMemo(() => {
     return votes
@@ -132,7 +137,7 @@ export default function ResultsIndexPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFAF5] px-5 pb-28 pt-6 font-['Nunito']">
+    <div className="min-h-screen bg-[#FFFAF5] px-5 pb-28 pt-6 pt-safe font-['Nunito']">
       <header className="sticky top-0 z-30 mb-4 bg-[#FFFAF5] pb-2">
         <h1 className="mb-4 text-2xl font-bold text-[#2C2C2C]">Historik</h1>
 

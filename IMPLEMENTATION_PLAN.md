@@ -212,9 +212,9 @@ direktedemokrati.nu/
 
 #### 4.2 About & Methodology Screen
 
-- [ ] 4.2.1 Build `src/app/about/page.tsx` — mission, data sources, AI methodology, media citations policy, voting integrity
-- [ ] 4.2.2 Build contact/feedback form (Name optional, Email optional, Message required)
-- [ ] 4.2.3 Form submission stores locally for now (or logs to console), shows inline confirmation
+- [x] 4.2.1 Build `src/app/about/page.tsx` — mission, data sources, AI methodology, media citations policy, voting integrity
+- [x] 4.2.2 Build contact/feedback form (Name optional, Email optional, Message required)
+- [x] 4.2.3 Form submission stores locally for now (or logs to console), shows inline confirmation
 
 ### 5. Polish & PWA
 
